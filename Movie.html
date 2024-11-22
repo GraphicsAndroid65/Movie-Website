@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HD Movies</title>
+    <title>Cinema Scope</title>
     <style>
         /* Global styles */
         body {
@@ -16,13 +16,62 @@
 
         /* Header style */
         header {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: #333; /* Background for the title */
         }
 
         header h1 {
-            color: #f1c40f;
+            color: yellow;
+            font-family: "Impact", "Georgia", serif; /* Bold title font */
+            font-size: 48px;
+            margin: 0;
+            text-transform: uppercase;
+            padding: 10px; /* Adds some padding inside the background */
+        }
+
+        /* HD Movies & Series section */
+        .hd-section {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        .movie-option {
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        .movie-option:hover {
+            background-color: yellow;
+            color: black;
+        }
+
+        .left-control {
+            order: 1; /* Hollywood button on the left */
+            margin-right: auto;
+        }
+
+        .right-control {
+            order: 3; /* Bollywood button on the right */
+            margin-left: auto;
+        }
+
+        .hd-section h2 {
+            order: 2; /* Keeps HD Movies & Series centered */
+            flex-grow: 1; /* Pushes buttons to sides */
+            color: #32CD32; /* Green for HD Movies & Series */
+            margin: 0;
+            font-size: 24px;
+            text-align: center;
         }
 
         /* Movie grid */
@@ -45,160 +94,193 @@
         .movie-title {
             padding: 10px;
             background-color: #333;
-            color: #f1c40f;
+            color: yellow; /* Original movie title color */
         }
 
-        /* Movie image */
         .movie-card img {
             width: 100%;
             height: auto;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .movie-card {
-                width: 150px;
-            }
+        /* Footer styles */
+        footer {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        footer p.colored {
+            font-size: 18px;
+            color: yellow; /* Yellow color for "Cinema Scope -" */
+            font-weight: bold;
+        }
+
+        footer a {
+            color: #00BFFF; /* Deep sky blue for links */
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
-<body>
+<body onload="showAllMovies()">
 
     <!-- Header -->
     <header>
-        <h1>HD Movies</h1>
+        <h1>Cinema Scope</h1>
     </header>
+
+    <!-- HD Movies & Series Section -->
+    <div class="hd-section">
+        <!-- Left: Hollywood Movie Option -->
+        <div class="movie-option left-control" onclick="filterMovies('Hollywood')">Hollywood Movies</div>
+
+        <!-- Center: HD Movies & Series Title -->
+        <h2>HD Movies & Series</h2>
+
+        <!-- Right: Bollywood Movie Option -->
+        <div class="movie-option right-control" onclick="filterMovies('Bollywood')">Bollywood Movies</div>
+    </div>
 
     <!-- Movie Grid -->
     <div class="movie-grid">
-        <!-- Movie 1 -->
-        <div class="movie-card">
+        <!-- Hollywood Movies (1–8) -->
+        <div class="movie-card hollywood">
             <div class="movie-title">Deadpool & Wolverine</div>
             <a href="./Links/link_1.html">
                 <img src="./Images/movie1.jpg" alt="Deadpool & Wolverine">
             </a>
         </div>
-
-        <!-- Movie 2 -->
-        <div class="movie-card">
+        <div class="movie-card hollywood">
             <div class="movie-title">John Wick 4</div>
             <a href="./Links/link_2.html">
                 <img src="./Images/movie2.jpg" alt="John Wick 4">
             </a>
         </div>
-
-        <!-- Movie 3 -->
-        <div class="movie-card">
+        <div class="movie-card hollywood">
             <div class="movie-title">Far from Home</div>
             <a href="./Links/link_3.html">
-                <img src="./Images/movie3.jpg" alt="Spider-Man Far from Home">
+                <img src="./Images/movie3.jpg" alt="Far from Home">
             </a>
         </div>
-
-        <!-- Movie 4 -->
-        <div class="movie-card">
+        <div class="movie-card hollywood">
             <div class="movie-title">Avengers Endgame</div>
             <a href="./Links/link_4.html">
-                <img src="./Images/movie4.jpg" alt="Movie Title 4">
+                <img src="./Images/movie4.jpg" alt="Avengers Endgame">
             </a>
         </div>
-
-        <!-- Movie 5 -->
-        <div class="movie-card">
+        <div class="movie-card hollywood">
             <div class="movie-title">Fast and Furious 9</div>
             <a href="./Links/link_5.html">
-                <img src="./Images/movie5.jpg" alt="Movie Title 5">
+                <img src="./Images/movie5.jpg" alt="Fast and Furious 9">
             </a>
         </div>
-
-        <!-- Movie 6 -->
-        <div class="movie-card">
+        <div class="movie-card hollywood">
             <div class="movie-title">Breaking Bad</div>
             <a href="./Links/link_6.html">
-                <img src="./Images/movie6.jpg" alt="Movie Title 6">
+                <img src="./Images/movie6.jpg" alt="Breaking Bad">
             </a>
         </div>
-
-        <!-- Movie 7 -->
-        <div class="movie-card">
+        <div class="movie-card hollywood">
             <div class="movie-title">The Boys</div>
             <a href="./Links/link_7.html">
-                <img src="./Images/movie7.jpg" alt="Movie Title 7">
+                <img src="./Images/movie7.jpg" alt="The Boys">
             </a>
         </div>
-
-        <!-- Movie 8 -->
-        <div class="movie-card">
+        <div class="movie-card hollywood">
             <div class="movie-title">Mission Impossible</div>
             <a href="./Links/link_8.html">
-                <img src="./Images/movie8.jpg" alt="Movie Title 8">
+                <img src="./Images/movie8.jpg" alt="Mission Impossible">
             </a>
         </div>
 
-        <!-- Movie 9 -->
-        <div class="movie-card">
+        <!-- Bollywood Movies (9–16) -->
+        <div class="movie-card bollywood">
             <div class="movie-title">Mirzapur</div>
             <a href="./Links/link_9.html">
-                <img src="./Images/movie9.jpg" alt="Movie Title 9">
+                <img src="./Images/movie9.jpg" alt="Mirzapur">
             </a>
         </div>
-
-        <!-- Movie 10 -->
-        <div class="movie-card">
+        <div class="movie-card bollywood">
             <div class="movie-title">Pushpa: The Rise</div>
             <a href="./Links/link_10.html">
-                <img src="./Images/movie10.jpg" alt="Movie Title 10">
+                <img src="./Images/movie10.jpg" alt="Pushpa: The Rise">
             </a>
         </div>
-
-        <!-- Movie 11 -->
-        <div class="movie-card">
-            <div class="movie-title">KGF: Chapter 1</div>
+        <div class="movie-card bollywood">
+            <div class="movie-title">K.G.F: Chapter 1</div>
             <a href="./Links/link_11.html">
-                <img src="./Images/movie11.jpg" alt="Movie Title 11">
+                <img src="./Images/movie11.jpg" alt="K.G.F: Chapter 1">
             </a>
         </div>
-
-        <!-- Movie 12 -->
-        <div class="movie-card">
+        <div class="movie-card bollywood">
             <div class="movie-title">Animal</div>
             <a href="./Links/link_12.html">
-                <img src="./Images/movie12.jpg" alt="Movie Title 12">
+                <img src="./Images/movie12.jpg" alt="Animal">
             </a>
         </div>
-
-        <!-- Movie 13 -->
-        <div class="movie-card">
+        <div class="movie-card bollywood">
             <div class="movie-title">The Family Man</div>
             <a href="./Links/link_13.html">
-                <img src="./Images/movie13.jpg" alt="Movie Title 13">
+                <img src="./Images/movie13.jpg" alt="The Family Man">
             </a>
         </div>
-
-        <!-- Movie 14 -->
-        <div class="movie-card">
+        <div class="movie-card bollywood">
             <div class="movie-title">Kalki 2898 AD</div>
             <a href="./Links/link_14.html">
-                <img src="./Images/movie14.jpg" alt="Movie Title 14">
+                <img src="./Images/movie14.jpg" alt="Kalki 2898 AD">
             </a>
         </div>
-
-        <!-- Movie 15 -->
-        <div class="movie-card">
+        <div class="movie-card bollywood">
             <div class="movie-title">Farzi</div>
             <a href="./Links/link_15.html">
-                <img src="./Images/movie15.jpg" alt="Movie Title 15">
+                <img src="./Images/movie15.jpg" alt="Farzi">
             </a>
         </div>
-
-        <!-- Movie 16 -->
-        <div class="movie-card">
+        <div class="movie-card bollywood">
             <div class="movie-title">Scam 1992</div>
             <a href="./Links/link_16.html">
-                <img src="./Images/movie16.jpg" alt="Movie Title 16">
+                <img src="./Images/movie16.jpg" alt="Scam 1992">
             </a>
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer>
+        <p class="colored">Cinema Scope -</p>
+        <p>This is the official site for downloading Bollywood and Hollywood movies and series. It offers a huge collection of the latest movies and series for free.  <br> Enjoy fast, secure downloads in various resolutions like 480p, 720p, and 1080p, ensuring a perfect fit for your device and internet speed. <br> We provide regular updates with the latest releases, a user-friendly interface, and carefully categorized content for easy navigation. </p>
+        <p class="colored">2024 Cinema Scope | All Rights Reserved</p>
+        <p>
+            <a href="./dev.html">Developer Info</a> |
+            <a href="https://github.com/GraphicsAndroid65/Movie-Website" target="_blank">Github</a>
+        </p>
+    </footer>
+
+    <script>
+        // Show all movies by default
+        function showAllMovies() {
+            const allMovies = document.querySelectorAll('.movie-card');
+            allMovies.forEach(movie => movie.style.display = 'block');
+        }
+
+        // Filter movies based on category
+        function filterMovies(category) {
+            const allMovies = document.querySelectorAll('.movie-card');
+            allMovies.forEach(movie => movie.style.display = 'none');
+
+            const selectedMovies = document.querySelectorAll(`.movie-card.${category.toLowerCase()}`);
+            selectedMovies.forEach(movie => movie.style.display = 'block');
+        }
+    </script>
 </body>
 </html>
