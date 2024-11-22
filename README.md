@@ -28,7 +28,7 @@ This project was proudly developed by:
 
 - **Mangesh Choudhary**
 - **Pranshu Patel**
-- **Aastha Patel**
+- **Akshata Kamble**
 
 ## How to Use the Website
 
