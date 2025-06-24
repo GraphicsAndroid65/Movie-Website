@@ -4,8 +4,13 @@ Welcome to the **Movie Download Website Project**! 🎥 This project was develop
 
 ## Screenshots
 
+### Main Page
 ![Screenshots](Screenshots/Screenshot_1.png)
+
+### Movie Download Page
 ![Screenshots](Screenshots/Screenshot_2.png)
+
+### Devloper Info Page
 ![Screenshots](Screenshots/Screenshot_3.png)
 
 ## About the Project
