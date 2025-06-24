@@ -2,6 +2,9 @@
 
 Welcome to the **Movie Download Website Project**! 🎥 This project was developed as part of our Web Technology subject and serves as a platform for downloading Bollywood and Hollywood movies, as well as web series, in multiple qualities. Designed using **HTML** and **CSS**, it highlights the power of static web development for creating user-friendly interfaces.
 
+![Screenshots](Screenshots/screenshot_1.png)
+
+
 ## About the Project
 
 This website is a one-stop platform for free movie and web series downloads. Users can browse through a collection of Bollywood and Hollywood content and download their favorites in resolutions like **480p**, **720p**, or **1080p**.
