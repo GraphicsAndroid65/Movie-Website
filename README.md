@@ -4,9 +4,9 @@ Welcome to the **Movie Download Website Project**! 🎥 This project was develop
 
 ## Screenshots
 
-![Screenshots](Screenshots/screenshot_1.png)
-![Screenshots](Screenshots/screenshot_2.png)
-![Screenshots](Screenshots/screenshot_3.png)
+![Screenshots](Screenshots/Screenshot_1.png)
+![Screenshots](Screenshots/Screenshot_2.png)
+![Screenshots](Screenshots/Screenshot_3.png)
 
 ## About the Project
 
